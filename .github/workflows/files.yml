@@ -1,0 +1,21 @@
+name: Directory and File Manipulation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create directory
+        run: mkdir -p mijn-directory
+
+      - name: Create file
+        run: echo "Dit is mijn eerste GitHub Actions workflow!" > mijn-directory/bericht.txt
+
+      - name: Show directory contents
+        run: ls -la mijn-directory
+
+      - name: Display file content
+        run: cat mijn-directory/bericht.txt
